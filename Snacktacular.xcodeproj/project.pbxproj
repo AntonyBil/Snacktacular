@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		158D1F5D2AF183CC00ABBD93 /* SnacktacularApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D1F5C2AF183CC00ABBD93 /* SnacktacularApp.swift */; };
-		158D1F5F2AF183CC00ABBD93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D1F5E2AF183CC00ABBD93 /* ContentView.swift */; };
+		158D1F5F2AF183CC00ABBD93 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D1F5E2AF183CC00ABBD93 /* LoginView.swift */; };
 		158D1F612AF183CE00ABBD93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158D1F602AF183CE00ABBD93 /* Assets.xcassets */; };
 		158D1F642AF183CE00ABBD93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158D1F632AF183CE00ABBD93 /* Preview Assets.xcassets */; };
 		158D1F6D2AF1883100ABBD93 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 158D1F6C2AF1883100ABBD93 /* FirebaseAuth */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		158D1F592AF183CC00ABBD93 /* Snacktacular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snacktacular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		158D1F5C2AF183CC00ABBD93 /* SnacktacularApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacktacularApp.swift; sourceTree = "<group>"; };
-		158D1F5E2AF183CC00ABBD93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		158D1F5E2AF183CC00ABBD93 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		158D1F602AF183CE00ABBD93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		158D1F632AF183CE00ABBD93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		158D1F6A2AF1847200ABBD93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			children = (
 				158D1F6A2AF1847200ABBD93 /* Info.plist */,
 				158D1F5C2AF183CC00ABBD93 /* SnacktacularApp.swift */,
-				158D1F5E2AF183CC00ABBD93 /* ContentView.swift */,
+				158D1F5E2AF183CC00ABBD93 /* LoginView.swift */,
 				158D1F602AF183CE00ABBD93 /* Assets.xcassets */,
 				158D1F742AF18C4300ABBD93 /* GoogleService-Info.plist */,
 				158D1F622AF183CE00ABBD93 /* Preview Content */,
@@ -160,7 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				158D1F5F2AF183CC00ABBD93 /* ContentView.swift in Sources */,
+				158D1F5F2AF183CC00ABBD93 /* LoginView.swift in Sources */,
 				158D1F5D2AF183CC00ABBD93 /* SnacktacularApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
