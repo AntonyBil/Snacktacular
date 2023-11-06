@@ -19,11 +19,12 @@ struct LoginView: View {
     @State private var showingAlert = false
     @State private var alertMessage = ""
     @State private var buttonsDisabled = true
+    @State private var path = NavigationPath()
     @FocusState private var focusField: Field?
     
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             VStack {
                 Image("logo")
                     .resizable()
@@ -84,12 +85,27 @@ struct LoginView: View {
                 .font(.title2)
                 .padding(.top)
                 .navigationBarTitleDisplayMode(.inline)
+                .navigationDestination(for: String.self) { view in
+                    if view == "ListView" {
+                        ListView()
+                    }
+                }
             }
-            .alert(alertMessage, isPresented: $showingAlert) {
-                Button("OK", role: .cancel) {}
+            
+        }
+        .alert(alertMessage, isPresented: $showingAlert) {
+            Button("OK", role: .cancel) {}
+        }
+       
+        .onAppear {
+            //if logged in when app runs, navigate to the new screen & skip login screen
+            if Auth.auth().currentUser != nil {
+                print("Login Successful")
+                path.append("ListView")
             }
         }
     }
+    
     
     //TODO: use extension
     func enableButtons() {
@@ -106,7 +122,7 @@ struct LoginView: View {
                 showingAlert = true
             } else {
                 print("Registration success!")
-                //TODO: loadListView
+                path.append("ListView")
             }
         }
     }
@@ -119,7 +135,7 @@ struct LoginView: View {
                 showingAlert = true
             } else {
                 print("Login success!")
-                //TODO: loadListView
+                path.append("ListView")
             }
         }
     }
