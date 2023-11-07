@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1512F2262AFAC8F1007E0397 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512F2252AFAC8F1007E0397 /* Spot.swift */; };
 		1512F2282AFACAFF007E0397 /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512F2272AFACAFF007E0397 /* SpotDetailView.swift */; };
+		1512F22B2AFAD409007E0397 /* SpotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512F22A2AFAD409007E0397 /* SpotViewModel.swift */; };
 		1537094D2AF979B200E0F0C0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537094C2AF979B200E0F0C0 /* ListView.swift */; };
 		158D1F5D2AF183CC00ABBD93 /* SnacktacularApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D1F5C2AF183CC00ABBD93 /* SnacktacularApp.swift */; };
 		158D1F5F2AF183CC00ABBD93 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D1F5E2AF183CC00ABBD93 /* LoginView.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		1512F2252AFAC8F1007E0397 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		1512F2272AFACAFF007E0397 /* SpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailView.swift; sourceTree = "<group>"; };
+		1512F22A2AFAD409007E0397 /* SpotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotViewModel.swift; sourceTree = "<group>"; };
 		1537094C2AF979B200E0F0C0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		158D1F592AF183CC00ABBD93 /* Snacktacular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snacktacular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		158D1F5C2AF183CC00ABBD93 /* SnacktacularApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacktacularApp.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 				1512F2252AFAC8F1007E0397 /* Spot.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1512F2292AFAD035007E0397 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1512F22A2AFAD409007E0397 /* SpotViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1537094E2AF979BB00E0F0C0 /* View */ = {
@@ -90,6 +100,7 @@
 				158D1F5C2AF183CC00ABBD93 /* SnacktacularApp.swift */,
 				1512F2242AFAC8D3007E0397 /* Model */,
 				1537094E2AF979BB00E0F0C0 /* View */,
+				1512F2292AFAD035007E0397 /* ViewModel */,
 				158D1F602AF183CE00ABBD93 /* Assets.xcassets */,
 				158D1F742AF18C4300ABBD93 /* GoogleService-Info.plist */,
 				158D1F622AF183CE00ABBD93 /* Preview Content */,
@@ -187,6 +198,7 @@
 			files = (
 				1512F2282AFACAFF007E0397 /* SpotDetailView.swift in Sources */,
 				158D1F5F2AF183CC00ABBD93 /* LoginView.swift in Sources */,
+				1512F22B2AFAD409007E0397 /* SpotViewModel.swift in Sources */,
 				158D1F5D2AF183CC00ABBD93 /* SnacktacularApp.swift in Sources */,
 				1537094D2AF979B200E0F0C0 /* ListView.swift in Sources */,
 				1512F2262AFAC8F1007E0397 /* Spot.swift in Sources */,
