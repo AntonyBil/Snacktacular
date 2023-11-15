@@ -11,6 +11,10 @@
 		1512F2282AFACAFF007E0397 /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512F2272AFACAFF007E0397 /* SpotDetailView.swift */; };
 		1512F22B2AFAD409007E0397 /* SpotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512F22A2AFAD409007E0397 /* SpotViewModel.swift */; };
 		1537094D2AF979B200E0F0C0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537094C2AF979B200E0F0C0 /* ListView.swift */; };
+		154BF8702B05434F00663BC9 /* PlaceLookupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BF86C2B05434E00663BC9 /* PlaceLookupView.swift */; };
+		154BF8712B05434F00663BC9 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BF86D2B05434E00663BC9 /* Place.swift */; };
+		154BF8722B05434F00663BC9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BF86E2B05434F00663BC9 /* LocationManager.swift */; };
+		154BF8732B05434F00663BC9 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BF86F2B05434F00663BC9 /* PlaceViewModel.swift */; };
 		158D1F5D2AF183CC00ABBD93 /* SnacktacularApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D1F5C2AF183CC00ABBD93 /* SnacktacularApp.swift */; };
 		158D1F5F2AF183CC00ABBD93 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D1F5E2AF183CC00ABBD93 /* LoginView.swift */; };
 		158D1F612AF183CE00ABBD93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158D1F602AF183CE00ABBD93 /* Assets.xcassets */; };
@@ -27,6 +31,10 @@
 		1512F2272AFACAFF007E0397 /* SpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailView.swift; sourceTree = "<group>"; };
 		1512F22A2AFAD409007E0397 /* SpotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotViewModel.swift; sourceTree = "<group>"; };
 		1537094C2AF979B200E0F0C0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		154BF86C2B05434E00663BC9 /* PlaceLookupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceLookupView.swift; sourceTree = "<group>"; };
+		154BF86D2B05434E00663BC9 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		154BF86E2B05434F00663BC9 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		154BF86F2B05434F00663BC9 /* PlaceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
 		158D1F592AF183CC00ABBD93 /* Snacktacular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snacktacular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		158D1F5C2AF183CC00ABBD93 /* SnacktacularApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacktacularApp.swift; sourceTree = "<group>"; };
 		158D1F5E2AF183CC00ABBD93 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -55,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				1512F2252AFAC8F1007E0397 /* Spot.swift */,
+				154BF86D2B05434E00663BC9 /* Place.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -63,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				1512F22A2AFAD409007E0397 /* SpotViewModel.swift */,
+				154BF86E2B05434F00663BC9 /* LocationManager.swift */,
+				154BF86F2B05434F00663BC9 /* PlaceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -73,6 +84,7 @@
 				158D1F5E2AF183CC00ABBD93 /* LoginView.swift */,
 				1537094C2AF979B200E0F0C0 /* ListView.swift */,
 				1512F2272AFACAFF007E0397 /* SpotDetailView.swift */,
+				154BF86C2B05434E00663BC9 /* PlaceLookupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,11 +209,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1512F2282AFACAFF007E0397 /* SpotDetailView.swift in Sources */,
+				154BF8702B05434F00663BC9 /* PlaceLookupView.swift in Sources */,
 				158D1F5F2AF183CC00ABBD93 /* LoginView.swift in Sources */,
+				154BF8712B05434F00663BC9 /* Place.swift in Sources */,
 				1512F22B2AFAD409007E0397 /* SpotViewModel.swift in Sources */,
 				158D1F5D2AF183CC00ABBD93 /* SnacktacularApp.swift in Sources */,
+				154BF8732B05434F00663BC9 /* PlaceViewModel.swift in Sources */,
 				1537094D2AF979B200E0F0C0 /* ListView.swift in Sources */,
 				1512F2262AFAC8F1007E0397 /* Spot.swift in Sources */,
+				154BF8722B05434F00663BC9 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +349,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Snacktacular/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app requires access to the device's location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires access to the device's location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -361,6 +379,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Snacktacular/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app requires access to the device's location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires access to the device's location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
