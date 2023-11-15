@@ -41,8 +41,12 @@ struct SpotDetailView: View {
             }
             .padding(.horizontal)
             
-            Map(coordinateRegion: $mapRegion, annotationItems: annotations) { annottation in
+            Map(coordinateRegion: $mapRegion,showsUserLocation: true, annotationItems: annotations) { annottation in
                 MapMarker(coordinate: annottation.coordinate)
+            }
+            .onChange(of: spot) { _ in
+                annotations = [Annotation(name: spot.name, address: spot.address, coordinate: spot.coordinate)]
+                mapRegion.center = spot.coordinate
             }
             
             Spacer()

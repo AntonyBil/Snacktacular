@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestoreSwift
 import CoreLocation
 
-struct Spot: Identifiable, Codable {
+struct Spot: Identifiable, Codable, Equatable {
     @DocumentID var id: String?
     var name = ""
     var address = ""
