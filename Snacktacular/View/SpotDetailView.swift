@@ -120,7 +120,7 @@ struct SpotDetailView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
                         Task {
-                          let succes = await spotVM.saveSpot(spot: spot)
+                            let succes = await spotVM.saveSpot(spot: spot)
                             if succes {
                                 dismiss()
                             } else {
@@ -158,7 +158,7 @@ struct SpotDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             SpotDetailView(spot: Spot(), previewRunning: true)
-                .environmentObject(SpotViewModel())
+                .environmentObject(ReviewViewModel())
                 .environmentObject(LocationManager())
         }
        

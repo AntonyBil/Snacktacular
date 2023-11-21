@@ -21,7 +21,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct SnacktacularApp: App {
     // register app delegate for Firebase setup
       @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-      @StateObject var spotVM = SpotViewModel()
+      @StateObject var spotVM = ReviewViewModel()
       @StateObject var locationManager = LocationManager()
 
     var body: some Scene {
