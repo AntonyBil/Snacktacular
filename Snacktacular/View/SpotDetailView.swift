@@ -24,6 +24,8 @@ struct SpotDetailView: View {
     @State var spot: Spot
     @State private var showPlaceLookupSheet = false
     @State private var showReviewViewSheet = false
+    @State private var showSaveAlert = false
+    @State private var showingAsSheet = false
     @State private var mapRegion = MKCoordinateRegion()
     @State private var annotations: [Annotation] = []
     @Environment(\.dismiss) private var dismiss
@@ -63,7 +65,7 @@ struct SpotDetailView: View {
                         } label: {
                             Text(review.title) //TODO: Build a custom cell showing stars, title and body
                         }
-
+                        
                     }
                 } header: {
                     HStack {
@@ -76,7 +78,12 @@ struct SpotDetailView: View {
                             .foregroundColor(Color("SnackColor"))
                         Spacer()
                         Button("Rate It") {
-                            showReviewViewSheet.toggle()
+                            if spot.id == nil {
+                                showSaveAlert.toggle()
+                            } else {
+                                showReviewViewSheet.toggle()
+                            }
+                            
                         }
                         .buttonStyle(.borderedProminent)
                         .bold()
@@ -85,16 +92,17 @@ struct SpotDetailView: View {
                 }
                 .headerProminence(.increased)
             }
-            
             .listStyle(.plain)
             
-            Spacer()
+             Spacer()
         }
         
         .onAppear {
-            if !previewRunning {
+            if !previewRunning && spot.id != nil {
                 $reviews.path = "spots/\(spot.id ?? "")/reviews"
                 print("reviews.path = \($reviews.path)")
+            } else {    //spot.id starts out as nil
+                showingAsSheet = true
             }
             
             
@@ -111,36 +119,44 @@ struct SpotDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(spot.id == nil)
         .toolbar {
-            if spot.id == nil { //New spot, we show Cancel/Save buttons
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Save") {
-                        Task {
-                            let succes = await spotVM.saveSpot(spot: spot)
-                            if succes {
-                                dismiss()
-                            } else {
-                                print("🚫 Eroor saving spot!")
-                            }
+            if showingAsSheet {
+                if spot.id == nil && showingAsSheet { //New spot, we show Cancel/Save buttons
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Cancel") {
+                            dismiss()
                         }
-                        dismiss()
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Save") {
+                            Task {
+                                let succes = await spotVM.saveSpot(spot: spot)
+                                if succes {
+                                    dismiss()
+                                } else {
+                                    print("🚫 Eroor saving spot!")
+                                }
+                            }
+                            dismiss()
+                        }
+                    }
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        Spacer()
+                        
+                        Button {
+                            showPlaceLookupSheet.toggle()
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                            Text("Lookup Place")
+                        }
+                    }
+                } else if showingAsSheet && spot.id != nil {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Done") {
+                            dismiss()
+                        }
                     }
                 }
-                ToolbarItemGroup(placement: .bottomBar) {
-                    Spacer()
-                    
-                    Button {
-                        showPlaceLookupSheet.toggle()
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                        Text("Lookup Place")
-                    }
-
-                }
+                
             }
         }
         .sheet(isPresented: $showPlaceLookupSheet) {
@@ -151,6 +167,25 @@ struct SpotDetailView: View {
                 ReviewView(spot: spot, review: Review())
             }
         }
+        .alert("Cannot Rate Place Unless It is Saved", isPresented: $showSaveAlert) {
+            Button("Cancel", role: .cancel) {}
+            Button("Save", role: .none) {
+                Task {
+                    let success = await spotVM.saveSpot(spot: spot)
+                    spot = spotVM.spot
+                    if success {
+                        // If we didn't update the path after saving spot, we wouldn't be able to show new weviews added
+                        $reviews.path = "spots/\(spot.id ?? "")/reviews"
+                        showReviewViewSheet.toggle()
+                    } else {
+                        print("Dang! Error saving spot!")
+                    }
+                }
+            }
+        } message: {
+            Text("Would you like to save this alert first so that you can enter a review?")
+        }
+        
     }
 }
 
@@ -158,9 +193,9 @@ struct SpotDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             SpotDetailView(spot: Spot(), previewRunning: true)
-                .environmentObject(ReviewViewModel())
+                .environmentObject(SpotViewModel())
                 .environmentObject(LocationManager())
         }
-       
+        
     }
 }
