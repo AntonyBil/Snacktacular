@@ -20,6 +20,7 @@ struct SpotDetailView: View {
     @EnvironmentObject var spotVM: SpotViewModel
     @EnvironmentObject var locationManager: LocationManager
     //THe variable below doesn't have the right path. We'll change this in .onAppear
+
     @FirestoreQuery(collectionPath: "spots") var reviews: [Review]
     @State var spot: Spot
     @State private var showPlaceLookupSheet = false
@@ -63,9 +64,8 @@ struct SpotDetailView: View {
                         NavigationLink {
                             ReviewView(spot: spot, review: review)
                         } label: {
-                            Text(review.title) //TODO: Build a custom cell showing stars, title and body
+                            SpotReviewRowView(review: review)
                         }
-                        
                     }
                 } header: {
                     HStack {

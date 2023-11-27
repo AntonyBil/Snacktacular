@@ -28,6 +28,7 @@
 		158D1F732AF1883100ABBD93 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 158D1F722AF1883100ABBD93 /* FirebaseStorage */; };
 		158D1F752AF18C4300ABBD93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 158D1F742AF18C4300ABBD93 /* GoogleService-Info.plist */; };
 		15B2D07B2B0D3D110011E517 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B2D07A2B0D3D110011E517 /* ReviewViewModel.swift */; };
+		15BF944F2B153333004FA5CD /* SpotReviewRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF944E2B153333004FA5CD /* SpotReviewRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		158D1F6A2AF1847200ABBD93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		158D1F742AF18C4300ABBD93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		15B2D07A2B0D3D110011E517 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
+		15BF944E2B153333004FA5CD /* SpotReviewRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotReviewRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				158D1F5E2AF183CC00ABBD93 /* LoginView.swift */,
 				1537094C2AF979B200E0F0C0 /* ListView.swift */,
 				1512F2272AFACAFF007E0397 /* SpotDetailView.swift */,
+				15BF944E2B153333004FA5CD /* SpotReviewRowView.swift */,
 				154BF86C2B05434E00663BC9 /* PlaceLookupView.swift */,
 				154BF8782B06B7D300663BC9 /* ReviewView.swift */,
 				154BF87A2B06B8F000663BC9 /* StarsSelectionView.swift */,
@@ -226,6 +229,7 @@
 				158D1F5F2AF183CC00ABBD93 /* LoginView.swift in Sources */,
 				154BF87B2B06B8F000663BC9 /* StarsSelectionView.swift in Sources */,
 				154BF8712B05434F00663BC9 /* Place.swift in Sources */,
+				15BF944F2B153333004FA5CD /* SpotReviewRowView.swift in Sources */,
 				154BF8792B06B7D300663BC9 /* ReviewView.swift in Sources */,
 				1512F22B2AFAD409007E0397 /* SpotViewModel.swift in Sources */,
 				158D1F5D2AF183CC00ABBD93 /* SnacktacularApp.swift in Sources */,

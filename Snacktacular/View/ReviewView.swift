@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ReviewView: View {
     
+    @StateObject var reviewVM = ReviewViewModel()
     @State var spot: Spot
     @State var review: Review
-    @StateObject var reviewVM = ReviewViewModel()
+    @State var postedByThisUser = false
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -34,22 +36,23 @@ struct ReviewView: View {
             
             HStack {
                 StarsSelectionView(rating: $review.rating)
+                    .disabled(!postedByThisUser) //disable if not posted by this user
                     .overlay {
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(.gray.opacity(0.5), lineWidth: 2)
+                            .stroke(.gray.opacity(0.5), lineWidth: postedByThisUser ? 2 : 0)
                     }
             }
             .padding(.bottom)
             
-            VStackLayout(alignment: .leading) {
+            VStack (alignment: .leading) {
                 Text("Revirw Title:")
                     .bold()
                 
                 TextField("title", text: $review.title)
-                    .textFieldStyle(.roundedBorder)
+                    .padding(.horizontal, 6)
                     .overlay {
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(.gray.opacity(0.5), lineWidth: 2)
+                            .stroke(.gray.opacity(0.5), lineWidth: postedByThisUser ? 2 : 0.5)
                     }
                 
                 Text("Review")
@@ -58,19 +61,24 @@ struct ReviewView: View {
                 TextField("review", text: $review.body, axis: .vertical)
                     .padding(.horizontal, 6)
                     .frame(maxHeight: .infinity, alignment: .topLeading)
-                    .textFieldStyle(.roundedBorder)
                     .overlay {
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(.gray.opacity(0.5), lineWidth: 2)
+                            .stroke(.gray.opacity(0.5), lineWidth: postedByThisUser ? 2 : 0.5)
                     }
 
                 
             }
+            .disabled(!postedByThisUser)
             .padding(.horizontal)
             .font(.title2)
             
             Spacer()
 
+        }
+        .onAppear {
+            if review.reviwer == Auth.auth().currentUser?.email {
+                postedByThisUser = true
+            }
         }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {

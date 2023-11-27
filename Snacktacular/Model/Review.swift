@@ -14,11 +14,11 @@ struct Review: Identifiable, Codable {
     var title = ""
     var body = ""
     var rating = 0
-    var reviewer = ""
+    var reviwer = Auth.auth().currentUser?.email ?? ""
     var postedOn = Date()
     
     var dictionary: [String: Any] {
-        return ["title": title, "body": body, "rating": rating, "reviwer" : Auth.auth().currentUser?.email ?? "", "postedOn": Timestamp(date: Date())]
+        return ["title": title, "body": body, "rating": rating, "reviwer" : reviwer, "postedOn": Timestamp(date: Date())]
     }
     
 }
