@@ -80,21 +80,24 @@ struct ReviewView: View {
                 postedByThisUser = true
             }
         }
+        .navigationBarBackButtonHidden(postedByThisUser) // Hide back button if posted by this user
         .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancrl") {
-                    dismiss()
+            if postedByThisUser {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancrl") {
+                        dismiss()
+                    }
                 }
-            }
-            
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Save") {
-                    Task {
-                       let success =  await reviewVM.saveReview(spot: spot, review: review)
-                        if success {
-                            dismiss()
-                        } else {
-                            print("ERROR: saving data in ReviewView")
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Save") {
+                        Task {
+                           let success =  await reviewVM.saveReview(spot: spot, review: review)
+                            if success {
+                                dismiss()
+                            } else {
+                                print("ERROR: saving data in ReviewView")
+                            }
                         }
                     }
                 }
