@@ -14,6 +14,7 @@ struct ReviewView: View {
     @State var spot: Spot
     @State var review: Review
     @State var postedByThisUser = false
+    @State var rateOrReviewerString = "Click to Rate:" //otherwise will say poster email & date
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -30,9 +31,12 @@ struct ReviewView: View {
             .padding(.horizontal)
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            Text("Click to Rate:")
-                .font(.title)
-                .bold()
+            Text(rateOrReviewerString)
+                .font(postedByThisUser ? .title2 : .subheadline)
+                .bold(postedByThisUser)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
+                .padding(.horizontal)
             
             HStack {
                 StarsSelectionView(rating: $review.rating)
@@ -78,6 +82,9 @@ struct ReviewView: View {
         .onAppear {
             if review.reviwer == Auth.auth().currentUser?.email {
                 postedByThisUser = true
+            } else {
+                let reviewPostedOn = review.postedOn.formatted(date: .numeric, time: .omitted)
+                rateOrReviewerString = "by: \(review.reviwer) on:\(reviewPostedOn)"
             }
         }
         .navigationBarBackButtonHidden(postedByThisUser) // Hide back button if posted by this user
