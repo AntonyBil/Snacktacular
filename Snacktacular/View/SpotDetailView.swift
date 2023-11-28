@@ -29,6 +29,13 @@ struct SpotDetailView: View {
     @State private var showingAsSheet = false
     @State private var mapRegion = MKCoordinateRegion()
     @State private var annotations: [Annotation] = []
+    var avgRating: String {
+        guard reviews.count != 0 else {
+            return "-.-"
+        }
+        let averageValue = Double(reviews.reduce(0) {$0 + $1.rating}) / Double(reviews.count)
+        return String(format: "%.1f", averageValue)
+    }
     @Environment(\.dismiss) private var dismiss
     let regionSize = 500.0  //meters
     var previewRunning = false
@@ -72,7 +79,7 @@ struct SpotDetailView: View {
                         Text ("Avg. Rating:")
                             .font(.title2)
                             .bold()
-                        Text("4.5") //Change to a computed property
+                        Text(avgRating) //Change to a computed property
                             .font(.title)
                             .fontWeight(.black)
                             .foregroundColor(Color("SnackColor"))
