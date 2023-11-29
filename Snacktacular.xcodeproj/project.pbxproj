@@ -18,6 +18,7 @@
 		154BF8752B06A60400663BC9 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BF8742B06A60400663BC9 /* Review.swift */; };
 		154BF8792B06B7D300663BC9 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BF8782B06B7D300663BC9 /* ReviewView.swift */; };
 		154BF87B2B06B8F000663BC9 /* StarsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BF87A2B06B8F000663BC9 /* StarsSelectionView.swift */; };
+		157AAA6E2B17CB1A00E18CF0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157AAA6D2B17CB1A00E18CF0 /* Photo.swift */; };
 		158D1F5D2AF183CC00ABBD93 /* SnacktacularApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D1F5C2AF183CC00ABBD93 /* SnacktacularApp.swift */; };
 		158D1F5F2AF183CC00ABBD93 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D1F5E2AF183CC00ABBD93 /* LoginView.swift */; };
 		158D1F612AF183CE00ABBD93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158D1F602AF183CE00ABBD93 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		154BF8742B06A60400663BC9 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		154BF8782B06B7D300663BC9 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		154BF87A2B06B8F000663BC9 /* StarsSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsSelectionView.swift; sourceTree = "<group>"; };
+		157AAA6D2B17CB1A00E18CF0 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		158D1F592AF183CC00ABBD93 /* Snacktacular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snacktacular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		158D1F5C2AF183CC00ABBD93 /* SnacktacularApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacktacularApp.swift; sourceTree = "<group>"; };
 		158D1F5E2AF183CC00ABBD93 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				1512F2252AFAC8F1007E0397 /* Spot.swift */,
 				154BF86D2B05434E00663BC9 /* Place.swift */,
 				154BF8742B06A60400663BC9 /* Review.swift */,
+				157AAA6D2B17CB1A00E18CF0 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				157AAA6E2B17CB1A00E18CF0 /* Photo.swift in Sources */,
 				1512F2282AFACAFF007E0397 /* SpotDetailView.swift in Sources */,
 				154BF8702B05434F00663BC9 /* PlaceLookupView.swift in Sources */,
 				15B2D07B2B0D3D110011E517 /* ReviewViewModel.swift in Sources */,
