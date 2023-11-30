@@ -30,6 +30,7 @@
 		158D1F752AF18C4300ABBD93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 158D1F742AF18C4300ABBD93 /* GoogleService-Info.plist */; };
 		15B2D07B2B0D3D110011E517 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B2D07A2B0D3D110011E517 /* ReviewViewModel.swift */; };
 		15BF944F2B153333004FA5CD /* SpotReviewRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF944E2B153333004FA5CD /* SpotReviewRowView.swift */; };
+		15CA97592B191608004D8D46 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA97582B191608004D8D46 /* PhotoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		158D1F742AF18C4300ABBD93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		15B2D07A2B0D3D110011E517 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		15BF944E2B153333004FA5CD /* SpotReviewRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotReviewRowView.swift; sourceTree = "<group>"; };
+		15CA97582B191608004D8D46 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				15BF944E2B153333004FA5CD /* SpotReviewRowView.swift */,
 				154BF86C2B05434E00663BC9 /* PlaceLookupView.swift */,
 				154BF8782B06B7D300663BC9 /* ReviewView.swift */,
+				15CA97582B191608004D8D46 /* PhotoView.swift */,
 				154BF87A2B06B8F000663BC9 /* StarsSelectionView.swift */,
 			);
 			path = View;
@@ -229,6 +232,7 @@
 				157AAA6E2B17CB1A00E18CF0 /* Photo.swift in Sources */,
 				1512F2282AFACAFF007E0397 /* SpotDetailView.swift in Sources */,
 				154BF8702B05434F00663BC9 /* PlaceLookupView.swift in Sources */,
+				15CA97592B191608004D8D46 /* PhotoView.swift in Sources */,
 				15B2D07B2B0D3D110011E517 /* ReviewViewModel.swift in Sources */,
 				158D1F5F2AF183CC00ABBD93 /* LoginView.swift in Sources */,
 				154BF87B2B06B8F000663BC9 /* StarsSelectionView.swift in Sources */,

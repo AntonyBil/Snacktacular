@@ -11,6 +11,10 @@ import FirebaseFirestoreSwift
 import PhotosUI
 
 struct SpotDetailView: View {
+    enum ButtonPressed {
+        case review, photo
+    }
+    
     struct Annotation: Identifiable {
         let id = UUID().uuidString
         var name: String
@@ -28,6 +32,7 @@ struct SpotDetailView: View {
     @State private var showReviewViewSheet = false
     @State private var showSaveAlert = false
     @State private var showingAsSheet = false
+    @State private var buttonPressed = ButtonPressed.review
     @State private var mapRegion = MKCoordinateRegion()
     @State private var annotations: [Annotation] = []
     @State private var selectedPhoto: PhotosPickerItem?
