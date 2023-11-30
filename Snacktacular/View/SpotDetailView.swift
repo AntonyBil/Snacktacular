@@ -30,9 +30,11 @@ struct SpotDetailView: View {
     @State var spot: Spot
     @State private var showPlaceLookupSheet = false
     @State private var showReviewViewSheet = false
+    @State private var showPhotoViewSheet = false
     @State private var showSaveAlert = false
     @State private var showingAsSheet = false
     @State private var buttonPressed = ButtonPressed.review
+    @State private var uiImageSelected = UIImage()
     @State private var mapRegion = MKCoordinateRegion()
     @State private var annotations: [Annotation] = []
     @State private var selectedPhoto: PhotosPickerItem?
@@ -98,8 +100,14 @@ struct SpotDetailView: View {
                             do {
                                 if let data = try await newValue?.loadTransferable(type: Data.self) {
                                     if let uiImage = UIImage(data: data) {
-                                    //TODO: This is wher you'd set your Image = Image(uiImage: UIImage) or call your function to save the image
+                                    uiImageSelected = uiImage
                                         print("Successfully selected image!")
+                                        buttonPressed = .photo
+                                        if spot.id  == nil {
+                                            showSaveAlert.toggle()
+                                        } else {
+                                            showPhotoViewSheet.toggle()
+                                        }
                                     }
                                 }
                             } catch {
@@ -109,6 +117,7 @@ struct SpotDetailView: View {
                     }
                     
                     Button(action: {
+                        buttonPressed = .review
                         if spot.id == nil {
                             showSaveAlert.toggle()
                         } else {
@@ -216,6 +225,11 @@ struct SpotDetailView: View {
                 ReviewView(spot: spot, review: Review())
             }
         }
+        .sheet(isPresented: $showPhotoViewSheet) {
+            NavigationStack{
+                PhotoView(uiImage: uiImageSelected, spot: spot)
+            }
+        }
         .alert("Cannot Rate Place Unless It is Saved", isPresented: $showSaveAlert) {
             Button("Cancel", role: .cancel) {}
             Button("Save", role: .none) {
@@ -225,6 +239,14 @@ struct SpotDetailView: View {
                     if success {
                         // If we didn't update the path after saving spot, we wouldn't be able to show new weviews added
                         $reviews.path = "spots/\(spot.id ?? "")/reviews"
+                        //TOSO: Add photos
+                      //  $photos.path = "spots/\(spot.id ?? "")/photos"
+                        switch buttonPressed {
+                        case .review:
+                            showReviewViewSheet.toggle()
+                        case .photo:
+                            showPhotoViewSheet.toggle()
+                        }
                         showReviewViewSheet.toggle()
                     } else {
                         print("Dang! Error saving spot!")
