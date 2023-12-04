@@ -14,7 +14,8 @@ struct SpotDetailPhotosScrollVirw: View {
     }
     
  //   let photos = [FakePhoto(), FakePhoto(), FakePhoto(), FakePhoto(), FakePhoto(), FakePhoto(), FakePhoto(), FakePhoto(), FakePhoto()]
-    
+    @State private var showPhotoVivwerView = false
+    @State private var uiImage = UIImage()
     let photos: [Photo]
     var spot: Spot
     
@@ -29,10 +30,16 @@ struct SpotDetailPhotosScrollVirw: View {
                             .resizable()
                         // Order is important here!
                             .frame(width: 80, height: 80)
-                            .scaledToFill()
+                            .scaledToFit()
                             .clipped()
+                            .onTapGesture {
+                                let renderer = ImageRenderer(content: image)
+                                uiImage = renderer.uiImage ?? UIImage()
+                                showPhotoVivwerView.toggle()
+                            }
                     } placeholder: {
                         ProgressView()
+                            .frame(width: 80, height: 80)
                     }
 
                 }
@@ -40,6 +47,9 @@ struct SpotDetailPhotosScrollVirw: View {
         }
         .frame(height: 80)
         .padding(.horizontal, 4)
+        .sheet(isPresented: $showPhotoVivwerView) {
+            PhotoView(uiImage: uiImage, spot: spot)
+        }
     }
 }
 
